@@ -1,0 +1,9 @@
+/node_modules
+
+# misc
+bin/
+obj/
+*/logs/
+.vs
+*.sln.DotSettings.user
+*.csproj.user
