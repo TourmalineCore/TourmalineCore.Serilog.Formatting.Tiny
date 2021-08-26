@@ -1,0 +1,29 @@
+name: "Deploy release"
+
+on:
+  push:
+    branches:
+    - master
+    - release/*
+
+env:
+    GH_TOKEN: ${{ secret.GH_TOKEN }}
+    NUGET_API_KEY: ${{ secret.NUGET_API_KEY }}
+
+jobs:
+  deploy:
+    name: 'build nuget package'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: 'Install dotnet'
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0'
+    - name: Npm Install
+      run: npm i semantic-release
+    - name: 'Build project'
+      run: dotnet build NodaTimeExtensions/TourmalineCore.NodaTimeExtensions.csproj --configuration Release
+    - name: 'run semantic'
+      run: npx semantic-release --dry-run -e ./release.config.js
