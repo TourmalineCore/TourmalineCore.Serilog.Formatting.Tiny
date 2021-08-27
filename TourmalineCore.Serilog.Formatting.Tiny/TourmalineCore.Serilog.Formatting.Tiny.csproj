@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>TourmalineCore.Serilog.Formatting.Tiny</PackageId>
+    <Version>0.0.1</Version>
     <Authors>Max Koval</Authors>
     <Company>TourmalineCore</Company>
     <Description>Custom formatting logs by Serilog.</Description>

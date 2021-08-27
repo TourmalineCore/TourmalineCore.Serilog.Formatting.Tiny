@@ -5,10 +5,7 @@ on:
     branches:
     - master
     - release/*
-
-env:
-    GH_TOKEN: ${{ secret.GH_TOKEN }}
-    NUGET_API_KEY: ${{ secret.NUGET_API_KEY }}
+    - develop
 
 jobs:
   deploy:
@@ -24,6 +21,9 @@ jobs:
     - name: Npm Install
       run: npm i semantic-release
     - name: 'Build project'
-      run: dotnet build NodaTimeExtensions/TourmalineCore.NodaTimeExtensions.csproj --configuration Release
+      run: dotnet build TourmalineCore.Serilog.Formatting.Tiny/TourmalineCore.Serilog.Formatting.Tiny.csproj --configuration Release
     - name: 'run semantic'
       run: npx semantic-release --dry-run -e ./release.config.js
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
