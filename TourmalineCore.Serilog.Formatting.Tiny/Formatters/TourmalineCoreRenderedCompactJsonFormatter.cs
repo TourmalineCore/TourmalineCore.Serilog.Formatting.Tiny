@@ -12,7 +12,7 @@ using Serilog.Formatting;
 using Serilog.Formatting.Compact;
 using Serilog.Formatting.Json;
 
-namespace TourmalineCore.Logging.Extensions.NetCore.Formatters
+namespace TourmalineCore.Serilog.Formatting.Tiny.Formatters
 {
     /// <summary>
     /// An <see cref="ITextFormatter" /> that writes events in a compact JSON format, for consumption in environments

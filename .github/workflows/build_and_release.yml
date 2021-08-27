@@ -5,7 +5,6 @@ on:
     branches:
     - master
     - release/*
-    - develop
 
 jobs:
   deploy:
@@ -23,7 +22,7 @@ jobs:
     - name: 'Build project'
       run: dotnet build TourmalineCore.Serilog.Formatting.Tiny/TourmalineCore.Serilog.Formatting.Tiny.csproj --configuration Release
     - name: 'run semantic'
-      run: npx semantic-release --dry-run -e ./release.config.js
+      run: npx semantic-release -e ./release.config.js
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}

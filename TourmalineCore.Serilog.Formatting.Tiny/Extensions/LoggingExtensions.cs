@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
-namespace TourmalineCore.Logging.Extensions.NetCore.Extensions
+namespace TourmalineCore.Serilog.Formatting.Tiny.Extentions
 {
     public static class LoggingExtensions
     {
