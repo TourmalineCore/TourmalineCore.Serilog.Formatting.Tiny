@@ -22,7 +22,7 @@ module.exports = {
     [
       "@zedtk/semantic-release-nuget",
       {
-        publish: false,
+        publish: true,
         projectRoot: './TourmalineCore.Serilog.Formatting.Tiny',
         includeSymbols: false,
       }
